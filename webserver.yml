@@ -5,12 +5,12 @@
 
   tasks:
     - name: Instalar nginx
-      apt:
+      package:
         name: nginx
         state: present
-        update_cache: yes
 
-    - name: Iniciar nginx
+    - name: Iniciar y habilitar nginx
       service:
         name: nginx
         state: started
+        enabled: yes
