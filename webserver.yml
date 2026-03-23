@@ -1,0 +1,16 @@
+---
+- name: Configurar servidor web
+  hosts: localhost
+  become: yes
+
+  tasks:
+    - name: Instalar nginx
+      apt:
+        name: nginx
+        state: present
+        update_cache: yes
+
+    - name: Iniciar nginx
+      service:
+        name: nginx
+        state: started
